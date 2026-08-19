@@ -1,0 +1,26 @@
+{% extends "products/base.html" %}
+
+{% block content %}
+
+    <div class="card h-100 shadow-sm">
+        <div class="card-body">
+            <a href="{% url 'product-detail' product.id %}" class="btn btn-primary mb-2">{{ product.name }}</a>
+            <h6 class="card-subtitle mb-2 text-muted">
+                Category: <span class="badge bg-secondary">{{ product.category.name }}</span>
+            </h6>
+            <p class="card-text text-truncate">{{ product.description }}</p>
+            <p class="card-text"><strong>Price:</strong> {{ product.price }} TL</p>
+            <p class="card-text"><small class="text-muted">Stock: {{ product.stock }}</small></p>
+        </div>
+        <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
+            <button type="button" class="btn btn-success w-100">Add Basket</button>
+    </div>
+    <a href="{% url 'product-list' %}" class="btn btn-primary mb-2">All Products</a>
+{% endblock content %}
+
+
+
+
+
+
+
