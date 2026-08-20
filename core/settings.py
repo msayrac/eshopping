@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # apps that we created
     'accounts',
     'products',
+    'orders',
     # packets
     'rest_framework',
     'rest_framework_simplejwt',
