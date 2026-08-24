@@ -3,6 +3,13 @@ from orders.models import Cart, CartItem
 
 # Register your models here.
 
+class CardAdmin(admin.ModelAdmin):
+    list_display =('id','user')
 
-admin.site.register(Cart)
-admin.site.register(CartItem)
+
+class CardItemAdmin(admin.ModelAdmin):
+    list_display =('id','cart','product')
+
+
+admin.site.register(Cart,CardAdmin)
+admin.site.register(CartItem,CardItemAdmin)
