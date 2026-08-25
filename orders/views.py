@@ -24,6 +24,8 @@ def add_to_cart(request,product_id):
     else:
         cart_item.quantity =1
         cart_item.save()
+    return redirect('cart-detail')
+ 
 
 # @login_required
 def decrease_cart_item(request, product_id):
@@ -31,14 +33,13 @@ def decrease_cart_item(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     cart_item = get_object_or_404(CartItem, cart=cart, product=product)
 
-
     if cart_item.quantity >1:
-        cart_item -=1
+        cart_item.quantity = cart_item.quantity - 1
         cart_item.save()
     else:
         cart_item.delete()
 
-    return redirect('cart_detail')
+    return redirect('cart-detail')
 
 # @login_required
 def remove_from_cart(request, product_id):

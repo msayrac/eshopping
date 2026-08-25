@@ -24,11 +24,7 @@ class Cart(models.Model):
     @property
     def total_items_count(self):
         # sepetteki toplam ürün sayısıs
-        item_count =0
-        items = Product.objects.all()
-        for item in items:
-            item_count += 1
-        return item_count
+        return sum(item.quantity for item in self.items.all())
 
 class CartItem(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items')
