@@ -1,8 +1,33 @@
 {% extends "products/base.html" %}
 
 {% block content %}
-    <h2 class="mb-4 text-secondary">Products List</h2>
-    
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <!-- Sol Taraf -->
+    <h2 class="text-secondary mb-0">Product List</h2>
+
+    <!-- Sağ Taraf (Sepet Butonu + Kullanıcı Bilgisi) -->
+    <div class="d-flex align-items-center gap-3">
+        <!-- Sepete Git Butonu -->
+        <a href="{% url 'cart-detail' %}" class="btn btn-outline-primary position-relative">
+            <i class="bi bi-cart3"></i> Sepete Git
+            {% if user.is_authenticated and user.cart.total_items_count > 0 %}
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{ user.cart.total_items_count }}
+                </span>
+            {% endif %}
+        </a>
+
+        <!-- Kullanıcı Adı Rozeti/Butonu -->
+        {% if user.is_authenticated %}
+            <span class="badge bg-light text-dark border p-2 d-flex align-items-center">
+                <i class="bi bi-person-circle me-1 text-primary"></i> {{ user.username }}
+            </span>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-sm btn-outline-secondary">Giriş Yap</a>
+        {% endif %}
+    </div>
+</div>
+   
     <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for product in products %}
         <div class="col">
@@ -16,11 +41,11 @@
                     <p class="card-text"><strong>Price:</strong> {{ product.price }} TL</p>
                 </div>
                 <div class="card-footer bg-transparent border-top-0 d-flex gap-2 pb-3">
-                    <button type="button" class="btn btn-success w-100">Add Basket</button>                    
-                </div>
-                <a href="{% url 'add-to-cart' product.id %}" class="btn btn-primary btn-sm mt-2">
-    <i class="bi bi-cart-plus"></i> Sepete Ekle
-</a>
+                    <button type="button" class="btn btn-success">
+                        <a href="{% url 'add-to-cart' product.id %}" class="btn btn-success">
+                            <i class="bi bi-cart-plus"></i> Sepete Ekle</a>
+                    </button>                  
+                </div>                
             </div>
         </div>
     {% empty %}

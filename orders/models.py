@@ -15,11 +15,8 @@ class Cart(models.Model):
     @property
     def total_price(self):
         # Sepetteli ürünlerin toplam fiyatı
-        item_total_price=0
-        items = Product.objects.all()
-        for item in items:
-            item_total_price += item.price
-        return item_total_price
+       
+        return sum(item.total_price for item in self.items.all())
 
     @property
     def total_items_count(self):
@@ -39,6 +36,6 @@ class CartItem(models.Model):
         return f"{self.product.name}  ({self.quantity} adet)"
 
     @property
-    def total_price_individual_item(self):
+    def total_price(self):
         # Tek bir ürün fiyatı priceXquantity
         return self.product.price*self.quantity
