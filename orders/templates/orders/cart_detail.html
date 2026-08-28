@@ -103,10 +103,10 @@
                             <span class="h5 fw-bold">Genel Toplam:</span>
                             <span class="h5 fw-bold text-primary">{{ cart.total_price }} TL</span>
                         </div>
-                        <a href="#" class="btn btn-primary w-100 py-2 fw-bold disabled">
-                            <i class="bi bi-shield-check"></i> Siparişi Tamamla (Checkout)
+                        <a href="{% url 'checkout' %}" class="btn btn-primary w-100 py-2 fw-bold">
+                            <i class="bi bi-shield-check"></i>Checkout
                         </a>
-                        <small class="text-muted d-block text-center mt-2">Checkout 4. gün eklenecektir.</small>
+                        {% comment %} <small class="text-muted d-block text-center mt-2">Checkout 4. gün eklenecektir.</small> {% endcomment %}
                     </div>
                 </div>
             </div>
