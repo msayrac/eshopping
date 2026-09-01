@@ -51,7 +51,6 @@ def remove_from_cart(request, product_id):
     cart_item.delete()
     return redirect('cart-detail')
 
-
 # @login_required
 def checkout(request):
     cart = get_object_or_404(Cart, user = request.user)
@@ -104,7 +103,15 @@ def checkout(request):
     return render(request, 'orders/checkout.html', {'cart': cart})
 
 
+# @login_required
+def order_list(request):
+    orders = Order.objects.filter(user=request.user).order_by('-created_at')
+    return render(request,'orders/order_list.html', {'orders':orders})
 
+# @login_required
+def order_detail(request, order_id):
+    order = get_object_or_404(order, id=order_id, user=request.user)
+    return render(request, 'orders/order_detail.html',{'order':order})
 
 
 
