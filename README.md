@@ -26,4 +26,9 @@ ShopCore, Django tabanlı modern bir e-ticaret web uygulaması ve REST API altya
 <img width="1885" height="735" alt="4" src="https://github.com/user-attachments/assets/7c915bfe-a2a4-4da7-8b9c-b341f1bac711" />
 <img width="1885" height="819" alt="5" src="https://github.com/user-attachments/assets/37a07cdc-51fb-49a5-99a8-d26899b7488f" />
 <img width="1879" height="920" alt="6" src="https://github.com/user-attachments/assets/8d151c80-7658-477e-a882-4147c3f33398" />
+<img width="1779" height="742" alt="1" src="https://github.com/user-attachments/assets/8e866be6-c40d-41fb-bd37-32a65b20a4a2" />
+<img width="1741" height="723" alt="2" src="https://github.com/user-attachments/assets/826da8ff-ce15-4ce2-9040-f7a2a5f9c2b9" />
+<img width="1726" height="669" alt="3" src="https://github.com/user-attachments/assets/517a2382-444d-4527-888c-5ef86fef5e6c" />
+<img width="1634" height="833" alt="4" src="https://github.com/user-attachments/assets/020f0133-3b2e-4534-bdeb-28a53e2f01d8" />
+<img width="953" height="792" alt="5" src="https://github.com/user-attachments/assets/71e6573d-e270-42b9-be46-d574f170646c" />
 
