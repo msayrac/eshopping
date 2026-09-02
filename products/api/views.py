@@ -2,11 +2,11 @@ from rest_framework import generics
 from rest_framework.filters import SearchFilter,OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from products.models import Category, Product
-from products.api.serializers import CategorySeriaizer,ProductSerializer
+from products.api.serializers import CategorySerializer,ProductSerializer
 
 class CategoryListAPIView(generics.ListAPIView):
     queryset = Category.objects.all()
-    serializer_class =CategorySeriaizer
+    serializer_class =CategorySerializer
 
 class ProductListAPIView(generics.ListAPIView):
     queryset = Product.objects.filter(is_active=True).select_related('category').order_by('-created_at')

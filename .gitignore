@@ -1,6 +1,24 @@
+# Sanal Ortam (Kesinlikle gitmemeli)
 venv/
-*.pyc
+env/
+.venv/
+
+# Python Derleme Dosyaları
 __pycache__/
+*.pyc
+*.pyo
+
+# Yerel Veritabanı
+*.sqlite3
 db.sqlite3
-.vscode/
+
+# Kullanıcı Yüklemeleri ve Statik Çıktılar
 media/
+staticfiles/
+
+# Çevre Değişkenleri ve Gizli Anahtarlar
+.env
+
+# Editör Ayarları
+.vscode/
+.idea/
